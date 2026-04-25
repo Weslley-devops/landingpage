@@ -1,23 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/Input";
 import { leadSchema, maskPhone, type LeadInput } from "@/lib/validation";
 import { track } from "@/lib/analytics";
+import { supabase } from "@/lib/supabase";
 import { FadeIn } from "@/components/motion/FadeIn";
 
 export function LeadForm() {
-  const router = useRouter();
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitSuccess, setSubmitSuccess] = useState<string | null>(null);
 
   const {
     register,
     handleSubmit,
     setValue,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<LeadInput>({
     resolver: zodResolver(leadSchema),
@@ -27,20 +28,25 @@ export function LeadForm() {
 
   const onSubmit = handleSubmit(async (data) => {
     setSubmitError(null);
-    try {
-      const res = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!res.ok) throw new Error("request failed");
-      track("generate_lead", { method: "landing_form" });
-      router.push("/obrigado");
-    } catch {
+    setSubmitSuccess(null);
+
+    const { error } = await supabase.from("leads").insert({
+      nome: data.nome,
+      email: data.email,
+      telefone: data.whatsapp || null,
+    });
+
+    if (error) {
+      console.error("[lead] supabase error", error);
       setSubmitError(
         "Não foi possível enviar agora. Tente novamente em instantes.",
       );
+      return;
     }
+
+    track("generate_lead", { method: "landing_form" });
+    reset();
+    setSubmitSuccess("Vaga garantida! Em breve entraremos em contato.");
   });
 
   return (
@@ -98,8 +104,14 @@ export function LeadForm() {
               />
 
               {submitError && (
-                <p role="alert" className="text-sm text-danger">
+                <p role="alert" className="text-sm text-[#fca5a5]">
                   {submitError}
+                </p>
+              )}
+
+              {submitSuccess && (
+                <p role="status" className="text-sm text-[#4ADE80]">
+                  {submitSuccess}
                 </p>
               )}
 
