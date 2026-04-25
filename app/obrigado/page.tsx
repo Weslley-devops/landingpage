@@ -10,33 +10,41 @@ export const metadata: Metadata = {
 
 export default function ThankYouPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-brand-950 via-[#061912] to-brand-900">
-      <Navbar />
+    <main className="relative min-h-screen overflow-hidden bg-[#0d2818] bg-[url(/blackgraud.png)] bg-cover bg-center bg-fixed bg-no-repeat">
+      {/* Dark overlay */}
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none bg-black/50"
+      />
 
-      <section className="relative mx-auto flex min-h-[90vh] max-w-2xl flex-col items-center justify-center px-6 text-center pt-32 pb-20">
-        <div className="relative mb-8">
-          <img src="/Logo.svg" alt="CuidaLink" className="h-[180px] w-auto" />
-        </div>
+      <div className="relative z-10">
+        <Navbar />
 
-        <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
-          Obrigado! <br />
-          <span className="text-brand-400">Sua vaga está garantida.</span>
-        </h1>
+        <section className="relative mx-auto flex min-h-[90vh] max-w-2xl flex-col items-center justify-center px-6 text-center pt-32 pb-20">
+          <div className="relative mb-8">
+            <img src="/logo.svg" alt="CuidaLink" className="h-[180px] w-auto" />
+          </div>
 
-        <p className="mt-6 max-w-lg text-base md:text-lg text-white/80 leading-relaxed">
-          Em breve você receberá um e-mail com seu acesso antecipado ao
-          CuidaLink. Enquanto isso, compartilhe com quem você quer proteger de
-          golpes digitais.
-        </p>
+          <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
+            Obrigado! <br />
+            <span className="text-[#22c55e]">Sua vaga está garantida.</span>
+          </h1>
 
-        <Link
-          href="/"
-          className="mt-10 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Voltar para o início
-        </Link>
-      </section>
+          <p className="mt-6 max-w-lg text-base md:text-lg text-white/80 leading-relaxed">
+            Em breve você receberá um e-mail com seu acesso antecipado ao
+            CuidaLink. Enquanto isso, compartilhe com quem você quer proteger de
+            golpes digitais.
+          </p>
+
+          <Link
+            href="/"
+            className="mt-10 inline-flex items-center gap-2 rounded-full border border-[#22c55e]/40 bg-[#22c55e]/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-[#22c55e]/20 hover:border-[#22c55e]"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Voltar para o início
+          </Link>
+        </section>
+      </div>
     </main>
   );
 }

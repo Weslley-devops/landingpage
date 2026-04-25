@@ -10,7 +10,7 @@ export function Navbar({ variant: _variant = "dark" }: NavbarProps) {
           href="/"
           className="flex items-center gap-2 no-underline cursor-pointer"
         >
-          <img src="/Logo.svg" alt="CuidaLink" className="h-20 w-auto" />
+          <img src="/logo.svg" alt="CuidaLink" className="h-20 w-auto" />
           <span className="text-[1.8rem] font-bold">
             <span className="text-white">Cuida</span>
             <span className="text-[#22c55e]">Link</span>

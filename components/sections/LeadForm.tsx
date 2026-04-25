@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
@@ -11,8 +12,8 @@ import { getSupabase } from "@/lib/supabase";
 import { FadeIn } from "@/components/motion/FadeIn";
 
 export function LeadForm() {
+  const router = useRouter();
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const [submitSuccess, setSubmitSuccess] = useState<string | null>(null);
 
   const {
     register,
@@ -28,7 +29,6 @@ export function LeadForm() {
 
   const onSubmit = handleSubmit(async (data) => {
     setSubmitError(null);
-    setSubmitSuccess(null);
 
     try {
       const { error } = await getSupabase().from("leads").insert({
@@ -54,7 +54,7 @@ export function LeadForm() {
 
     track("generate_lead", { method: "landing_form" });
     reset();
-    setSubmitSuccess("Vaga garantida! Em breve entraremos em contato.");
+    router.push("/obrigado");
   });
 
   return (
@@ -114,12 +114,6 @@ export function LeadForm() {
               {submitError && (
                 <p role="alert" className="text-sm text-[#fca5a5]">
                   {submitError}
-                </p>
-              )}
-
-              {submitSuccess && (
-                <p role="status" className="text-sm text-[#4ADE80]">
-                  {submitSuccess}
                 </p>
               )}
 
