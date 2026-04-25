@@ -14,7 +14,9 @@
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
       "Bash(git check-ignore *)",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(rm -rf .next)",
+      "Bash(mv .env .env.bak)"
     ]
   }
 }

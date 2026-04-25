@@ -7,7 +7,7 @@ import { Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/Input";
 import { leadSchema, maskPhone, type LeadInput } from "@/lib/validation";
 import { track } from "@/lib/analytics";
-import { supabase } from "@/lib/supabase";
+import { getSupabase } from "@/lib/supabase";
 import { FadeIn } from "@/components/motion/FadeIn";
 
 export function LeadForm() {
@@ -30,14 +30,22 @@ export function LeadForm() {
     setSubmitError(null);
     setSubmitSuccess(null);
 
-    const { error } = await supabase.from("leads").insert({
-      nome: data.nome,
-      email: data.email,
-      telefone: data.whatsapp || null,
-    });
+    try {
+      const { error } = await getSupabase().from("leads").insert({
+        nome: data.nome,
+        email: data.email,
+        telefone: data.whatsapp || null,
+      });
 
-    if (error) {
-      console.error("[lead] supabase error", error);
+      if (error) {
+        console.error("[lead] supabase error", error);
+        setSubmitError(
+          "Não foi possível enviar agora. Tente novamente em instantes.",
+        );
+        return;
+      }
+    } catch (err) {
+      console.error("[lead] client init error", err);
       setSubmitError(
         "Não foi possível enviar agora. Tente novamente em instantes.",
       );
