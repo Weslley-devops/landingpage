@@ -24,13 +24,8 @@ export function Hero() {
         loop
         playsInline
         aria-hidden
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="absolute inset-0 w-full h-full object-cover z-0 will-change-transform [transform:translateZ(0)] backface-hidden"
         src="/robozin.mp4"
-        style={{
-          willChange: "transform",
-          transform: "translateZ(0)",
-          backfaceVisibility: "hidden",
-        }}
       />
 
       {/* ══════════════════════════════════════════
@@ -38,49 +33,28 @@ export function Hero() {
       ══════════════════════════════════════════ */}
       <div
         aria-hidden
-        className="absolute inset-0 pointer-events-none z-[1]"
-        style={{
-          background:
-            "linear-gradient(to right, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.10) 100%)",
-        }}
+        className="absolute inset-0 pointer-events-none z-[1] bg-[linear-gradient(to_right,rgba(0,0,0,0.40)_0%,rgba(0,0,0,0.25)_50%,rgba(0,0,0,0.10)_100%)]"
       />
       {/* Overlay inferior para suavizar o rodapé */}
       <div
         aria-hidden
-        className="absolute bottom-0 left-0 right-0 pointer-events-none z-[1]"
-        style={{
-          height: "30%",
-          background: "linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 100%)",
-        }}
+        className="absolute bottom-0 left-0 right-0 pointer-events-none z-[1] h-[30%] bg-[linear-gradient(to_top,rgba(0,0,0,0.35)_0%,transparent_100%)]"
       />
 
       {/* ══════════════════════════════════════════
           NAVBAR MINIMALISTA
       ══════════════════════════════════════════ */}
       <nav className="relative z-20 w-full bg-transparent">
-        <div
-          className="mx-auto max-w-7xl flex items-center justify-between"
-          style={{ padding: "1.5rem 2rem" }}
-        >
+        <div className="mx-auto max-w-7xl flex items-center justify-between px-8 py-6">
           {/* Logo */}
           <a
             href="/"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-              textDecoration: "none",
-              cursor: "pointer",
-            }}
+            className="flex items-center gap-2 no-underline cursor-pointer"
           >
-            <img
-              src="/Logo.svg"
-              alt="CuidaLink"
-              style={{ height: "80px", width: "auto" }}
-            />
-            <span style={{ fontSize: "1.8rem", fontWeight: "bold" }}>
-              <span style={{ color: "white" }}>Cuida</span>
-              <span style={{ color: "#22c55e" }}>Link</span>
+            <img src="/Logo.svg" alt="CuidaLink" className="h-20 w-auto" />
+            <span className="text-[1.8rem] font-bold">
+              <span className="text-white">Cuida</span>
+              <span className="text-[#22c55e]">Link</span>
             </span>
           </a>
 
@@ -88,16 +62,7 @@ export function Hero() {
           <Link
             href="#acesso"
             id="navbar-cta"
-            className="rounded-full px-5 py-2.5 text-sm font-semibold bg-transparent transition-all duration-200 hover:-translate-y-px hover:bg-[#22c55e]/10"
-            style={{
-              fontSize: "1.2rem",
-              color: "white",
-              border: "2px solid white",
-              padding: "0.5rem 1.5rem",
-              borderRadius: "999px",
-              background: "transparent",
-              cursor: "pointer",
-            }}
+            className="rounded-full px-6 py-2 text-[1.2rem] font-semibold bg-transparent text-white border-2 border-white cursor-pointer transition-all duration-200 hover:-translate-y-px hover:bg-[#22c55e]/10"
           >
             Entrar
           </Link>
@@ -109,41 +74,18 @@ export function Hero() {
       ══════════════════════════════════════════ */}
       <div className="relative z-10 flex flex-1 items-center">
         <div className="w-full px-6 md:pl-[90px] md:pr-6 pb-20 pt-8 md:pt-0">
-          <div
-            className="max-w-[720px] text-left flex flex-col items-start"
-            style={{ marginLeft: 0, paddingLeft: "3rem" }}
-          >
+          <div className="max-w-[720px] text-left flex flex-col items-start ml-0 pl-12">
 
             {/* Headline principal */}
             <motion.h1
               {...fadeUp(0.22)}
-              className="font-extrabold"
-              style={{
-                fontSize: "4rem",
-                fontWeight: 800,
-                lineHeight: 1.15,
-                color: "#FFFFFF",
-                letterSpacing: "-0.02em",
-                textAlign: "left",
-                textShadow: "0 2px 20px rgba(0,0,0,0.5)",
-              }}
+              className="font-extrabold text-[4rem] leading-[1.15] text-white tracking-[-0.02em] text-left [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]"
             >
               Seus pais podem cair<br />em um golpe{" "}
-              <span
-                style={{
-                  color: "#FF6B6B",
-                  textShadow: "0 0 40px rgba(255,107,107,0.55), 0 2px 20px rgba(0,0,0,0.5)",
-                }}
-              >
+              <span className="text-[#FF6B6B] [text-shadow:0_0_40px_rgba(255,107,107,0.55),_0_2px_20px_rgba(0,0,0,0.5)]">
                 HOJE.
               </span>{" "}
-              <span
-                style={{
-                  color: "#4ADE80",
-                  fontWeight: 700,
-                  textShadow: "0 0 30px rgba(74,222,128,0.45), 0 2px 14px rgba(0,0,0,0.5)",
-                }}
-              >
+              <span className="text-[#4ADE80] font-bold [text-shadow:0_0_30px_rgba(74,222,128,0.45),_0_2px_14px_rgba(0,0,0,0.5)]">
                 Você<br />conseguiria impedir?
               </span>
             </motion.h1>
@@ -151,14 +93,7 @@ export function Hero() {
             {/* Parágrafo descritivo */}
             <motion.p
               {...fadeUp(0.44)}
-              style={{
-                color: "rgba(255,255,255,0.90)",
-                fontSize: "1.4rem",
-                fontWeight: 400,
-                lineHeight: 1.65,
-                marginTop: "22px",
-                textShadow: "0 1px 12px rgba(0,0,0,0.45)",
-              }}
+              className="text-white/90 text-[1.4rem] font-normal leading-[1.65] mt-[22px] [text-shadow:0_1px_12px_rgba(0,0,0,0.45)]"
             >
               Uma mensagem falsa parece real e em segundos pode fazer você
               perder o dinheiro que levou anos pra conquistar.
@@ -167,39 +102,19 @@ export function Hero() {
             {/* CTA */}
             <motion.div
               {...fadeUp(0.58)}
-              className="flex flex-col items-start gap-3"
-              style={{ marginTop: "28px", marginLeft: 0, paddingLeft: 0 }}
+              className="flex flex-col items-start gap-3 mt-7 ml-0 pl-0"
             >
               <Link
                 href="#acesso"
                 id="hero-cta-primary"
-                className="inline-flex items-center justify-center gap-2 rounded-full text-white transition-all duration-200 hover:-translate-y-1 active:translate-y-0 focus-visible:outline-none focus-visible:ring-4"
-                style={{
-                  background: "#22c55e",
-                  fontSize: "1.4rem",
-                  fontWeight: 700,
-                  letterSpacing: "-0.01em",
-                  padding: "16px 28px",
-                  boxShadow:
-                    "0 0 30px rgba(34,197,94,0.4), 0 20px 50px -10px rgba(34,197,94,0.65)",
-                }}
+                className="inline-flex items-center justify-center gap-2 rounded-full text-white transition-all duration-200 hover:-translate-y-1 active:translate-y-0 focus-visible:outline-none focus-visible:ring-4 bg-[#22c55e] text-[1.4rem] font-bold tracking-[-0.01em] px-7 py-4 shadow-[0_0_30px_rgba(34,197,94,0.4),0_20px_50px_-10px_rgba(34,197,94,0.65)]"
               >
                 <ShieldCheck className="h-5 w-5" strokeWidth={2.4} />
                 Quero proteger minha família AGORA
               </Link>
 
               {/* Aviso âmbar */}
-              <p
-                className="inline-flex items-center justify-center gap-1.5"
-                style={{
-                  color: "#FBBF24",
-                  fontSize: "1.2rem",
-                  fontWeight: 500,
-                  textAlign: "center",
-                  width: "100%",
-                  textShadow: "0 1px 10px rgba(0,0,0,0.45)",
-                }}
-              >
+              <p className="inline-flex items-center justify-center gap-1.5 text-[#FBBF24] text-[1.2rem] font-medium text-center w-full [text-shadow:0_1px_10px_rgba(0,0,0,0.45)]">
                 <span>⚠</span> Acesso antecipado limitado
               </p>
             </motion.div>

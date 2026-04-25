@@ -46,59 +46,21 @@ export function LeadForm() {
   return (
     <section
       id="acesso"
-      className="relative overflow-hidden py-24 md:py-28"
-      style={{
-        backgroundColor: "#0d2818",
-        backgroundImage: "url(/blackgraud.png)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-        backgroundRepeat: "no-repeat",
-      }}
+      className="relative overflow-hidden py-24 md:py-28 bg-[#0d2818] bg-[url(/blackgraud.png)] bg-cover bg-center bg-fixed bg-no-repeat"
     >
       {/* Dark overlay */}
       <div
         aria-hidden
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: "rgba(0, 0, 0, 0.4)" }}
+        className="absolute inset-0 pointer-events-none bg-black/40"
       />
 
-      <div
-        className="relative z-10 mx-auto px-6"
-        style={{ maxWidth: "820px", width: "95%" }}
-      >
+      <div className="relative z-10 mx-auto px-6 max-w-[820px] w-[95%]">
         <FadeIn>
-          <div
-            style={{
-              background: "rgba(255, 255, 255, 0.05)",
-              border: "1px solid rgba(0, 229, 192, 0.25)",
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)",
-              borderRadius: "20px",
-              padding: "3.5rem",
-              boxShadow:
-                "0 0 30px rgba(0, 229, 192, 0.08), 0 8px 32px rgba(0,0,0,0.4)",
-            }}
-          >
-            <h2
-              style={{
-                color: "#FFFFFF",
-                fontSize: "clamp(1.75rem, 3.5vw, 2.25rem)",
-                fontWeight: 800,
-                lineHeight: 1.15,
-                letterSpacing: "-0.02em",
-              }}
-            >
+          <div className="bg-white/5 border border-[rgba(0,229,192,0.25)] backdrop-blur-[12px] rounded-[20px] p-14 shadow-[0_0_30px_rgba(0,229,192,0.08),0_8px_32px_rgba(0,0,0,0.4)]">
+            <h2 className="text-white text-[clamp(1.75rem,3.5vw,2.25rem)] font-extrabold leading-[1.15] tracking-[-0.02em]">
               Quero acesso antecipado
             </h2>
-            <p
-              className="mt-2"
-              style={{
-                color: "rgba(255,255,255,0.6)",
-                fontSize: "1rem",
-                lineHeight: 1.5,
-              }}
-            >
+            <p className="mt-2 text-white/60 text-base leading-normal">
               Rápido, gratuito e sem compromisso.
             </p>
 
@@ -144,13 +106,7 @@ export function LeadForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-4 font-bold text-white transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
-                style={{
-                  background: "#22C55E",
-                  fontSize: "1.0625rem",
-                  boxShadow:
-                    "0 18px 40px -15px rgba(34,197,94,0.55), 0 4px 10px -2px rgba(34,197,94,0.25)",
-                }}
+                className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-4 font-bold text-white transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 bg-[#22C55E] text-[1.0625rem] shadow-[0_18px_40px_-15px_rgba(34,197,94,0.55),0_4px_10px_-2px_rgba(34,197,94,0.25)]"
               >
                 {isSubmitting ? (
                   <>
@@ -162,10 +118,7 @@ export function LeadForm() {
                 )}
               </button>
 
-              <p
-                className="text-center text-xs"
-                style={{ color: "rgba(255,255,255,0.4)" }}
-              >
+              <p className="text-center text-xs text-white/40">
                 Seus dados estão seguros. Não fazemos spam.
               </p>
             </form>

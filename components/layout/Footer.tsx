@@ -16,18 +16,9 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export function Footer() {
   return (
-    <footer
-      style={{
-        backgroundColor: "#0d2818",
-        borderTop: "1px solid rgba(34,197,94,0.35)",
-        padding: "2rem",
-      }}
-    >
+    <footer className="bg-[#0d2818] border-t border-[rgba(34,197,94,0.35)] p-8">
       <div className="mx-auto max-w-6xl flex flex-col items-center gap-4 md:flex-row md:justify-between">
-        <p
-          className="text-center md:text-left"
-          style={{ color: "#FFFFFF", fontSize: "0.95rem" }}
-        >
+        <p className="text-center md:text-left text-white text-[0.95rem]">
           &copy; {new Date().getFullYear()} {site.name}. Protegendo famílias
           brasileiras contra golpes.
         </p>
@@ -40,16 +31,14 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Fale conosco no WhatsApp"
-            className="group grid h-11 w-11 place-items-center rounded-full text-white transition hover:scale-105"
-            style={{ backgroundColor: "#22c55e" }}
+            className="group grid h-11 w-11 place-items-center rounded-full text-white transition hover:scale-105 bg-[#22c55e]"
           >
             <WhatsAppIcon className="h-5 w-5" />
           </a>
           <a
             href={site.email.href}
             aria-label="Enviar e-mail"
-            className="group grid h-11 w-11 place-items-center rounded-full text-white transition hover:scale-105"
-            style={{ backgroundColor: "#22c55e" }}
+            className="group grid h-11 w-11 place-items-center rounded-full text-white transition hover:scale-105 bg-[#22c55e]"
           >
             <Mail className="h-5 w-5" strokeWidth={2} />
           </a>

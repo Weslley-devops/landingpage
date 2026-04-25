@@ -8,22 +8,12 @@ export function Navbar({ variant: _variant = "dark" }: NavbarProps) {
       <div className="mx-auto max-w-6xl px-6 py-6 flex items-center justify-between">
         <a
           href="/"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
-            textDecoration: "none",
-            cursor: "pointer",
-          }}
+          className="flex items-center gap-2 no-underline cursor-pointer"
         >
-          <img
-            src="/Logo.svg"
-            alt="CuidaLink"
-            style={{ height: "80px", width: "auto" }}
-          />
-          <span style={{ fontSize: "1.8rem", fontWeight: "bold" }}>
-            <span style={{ color: "white" }}>Cuida</span>
-            <span style={{ color: "#22c55e" }}>Link</span>
+          <img src="/Logo.svg" alt="CuidaLink" className="h-20 w-auto" />
+          <span className="text-[1.8rem] font-bold">
+            <span className="text-white">Cuida</span>
+            <span className="text-[#22c55e]">Link</span>
           </span>
         </a>
       </div>
