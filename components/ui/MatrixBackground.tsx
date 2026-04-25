@@ -31,17 +31,7 @@ function FloatingCube({
         transform: `rotate(${rotate}deg)`,
       }}
     >
-      <div
-        className="relative w-full h-full rounded-xl grid place-items-center"
-        style={{
-          background:
-            "linear-gradient(135deg, rgba(34,197,94,0.10) 0%, rgba(34,197,94,0.03) 100%)",
-          border: "1px solid rgba(34,197,94,0.35)",
-          boxShadow:
-            "inset 0 0 20px rgba(34,197,94,0.10), 0 0 30px rgba(34,197,94,0.15)",
-          backdropFilter: "blur(2px)",
-        }}
-      >
+      <div className="relative w-full h-full rounded-xl grid place-items-center bg-[linear-gradient(135deg,rgba(34,197,94,0.10)_0%,rgba(34,197,94,0.03)_100%)] border border-[rgba(34,197,94,0.35)] shadow-[inset_0_0_20px_rgba(34,197,94,0.10),0_0_30px_rgba(34,197,94,0.15)] backdrop-blur-[2px]">
         <FloatingCubeIcon />
       </div>
     </div>
@@ -62,15 +52,13 @@ function Particle({
   return (
     <span
       aria-hidden
-      className="absolute rounded-full"
+      className="absolute rounded-full bg-[#4ade80] shadow-[0_0_6px_rgba(74,222,128,0.9)]"
       style={{
         top,
         left,
         width: size,
         height: size,
-        background: "#4ade80",
         opacity,
-        boxShadow: "0 0 6px rgba(74,222,128,0.9)",
       }}
     />
   );
@@ -82,63 +70,25 @@ export function MatrixBackground() {
       {/* Base image + solid fallback */}
       <div
         aria-hidden
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundColor: "#0d2818",
-          backgroundImage: "url(/blackgraud.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
+        className="absolute inset-0 pointer-events-none bg-[#0d2818] bg-[url(/blackgraud.png)] bg-cover bg-center bg-no-repeat"
       />
 
       {/* Grade em perspectiva — piso matrix */}
       <div
         aria-hidden
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: `
-            linear-gradient(to right, transparent 0%, rgba(34,197,94,0.35) 50%, transparent 100%) 0 0 / 100% 1px no-repeat,
-            repeating-linear-gradient(0deg, rgba(34,197,94,0.22) 0 1px, transparent 1px 80px),
-            repeating-linear-gradient(90deg, rgba(34,197,94,0.22) 0 1px, transparent 1px 80px)
-          `,
-          transform: "perspective(700px) rotateX(62deg) translateY(32%) scale(1.8)",
-          transformOrigin: "center top",
-          maskImage:
-            "radial-gradient(ellipse 70% 60% at 50% 0%, black 20%, transparent 80%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 70% 60% at 50% 0%, black 20%, transparent 80%)",
-          opacity: 0.9,
-        }}
+        className="absolute inset-0 pointer-events-none origin-top opacity-90 bg-[linear-gradient(to_right,transparent_0%,rgba(34,197,94,0.35)_50%,transparent_100%)_0_0_/_100%_1px_no-repeat,repeating-linear-gradient(0deg,rgba(34,197,94,0.22)_0_1px,transparent_1px_80px),repeating-linear-gradient(90deg,rgba(34,197,94,0.22)_0_1px,transparent_1px_80px)] [transform:perspective(700px)_rotateX(62deg)_translateY(32%)_scale(1.8)] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black_20%,transparent_80%)] [-webkit-mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black_20%,transparent_80%)]"
       />
 
       {/* Grade de teto (espelhada) */}
       <div
         aria-hidden
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: `
-            repeating-linear-gradient(0deg, rgba(34,197,94,0.14) 0 1px, transparent 1px 80px),
-            repeating-linear-gradient(90deg, rgba(34,197,94,0.14) 0 1px, transparent 1px 80px)
-          `,
-          transform: "perspective(700px) rotateX(-62deg) translateY(-32%) scale(1.8)",
-          transformOrigin: "center bottom",
-          maskImage:
-            "radial-gradient(ellipse 70% 60% at 50% 100%, black 20%, transparent 80%)",
-          WebkitMaskImage:
-            "radial-gradient(ellipse 70% 60% at 50% 100%, black 20%, transparent 80%)",
-          opacity: 0.55,
-        }}
+        className="absolute inset-0 pointer-events-none origin-bottom opacity-[0.55] bg-[repeating-linear-gradient(0deg,rgba(34,197,94,0.14)_0_1px,transparent_1px_80px),repeating-linear-gradient(90deg,rgba(34,197,94,0.14)_0_1px,transparent_1px_80px)] [transform:perspective(700px)_rotateX(-62deg)_translateY(-32%)_scale(1.8)] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_100%,black_20%,transparent_80%)] [-webkit-mask-image:radial-gradient(ellipse_70%_60%_at_50%_100%,black_20%,transparent_80%)]"
       />
 
       {/* Glow radial central */}
       <div
         aria-hidden
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 55% at 50% 50%, rgba(34,197,94,0.28) 0%, rgba(34,197,94,0.10) 35%, transparent 70%)",
-        }}
+        className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_55%_at_50%_50%,rgba(34,197,94,0.28)_0%,rgba(34,197,94,0.10)_35%,transparent_70%)]"
       />
 
       {/* Cubos flutuantes decorativos */}

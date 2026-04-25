@@ -14,15 +14,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       <div className="flex flex-col gap-1.5">
         <label
           htmlFor={inputId}
-          className="font-semibold uppercase tracking-[0.12em]"
-          style={{ color: "#00E5C0", fontSize: "0.75rem" }}
+          className="font-semibold uppercase tracking-[0.12em] text-[#00E5C0] text-[0.75rem]"
         >
           {label}
           {optional && (
-            <span
-              className="ml-1 normal-case font-normal tracking-normal"
-              style={{ color: "rgba(0,229,192,0.6)" }}
-            >
+            <span className="ml-1 normal-case font-normal tracking-normal text-[#00E5C0]/60">
               (opcional)
             </span>
           )}
@@ -39,11 +35,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           {...rest}
         />
         {error && (
-          <p
-            role="alert"
-            className="text-xs mt-0.5"
-            style={{ color: "#fca5a5" }}
-          >
+          <p role="alert" className="text-xs mt-0.5 text-[#fca5a5]">
             {error}
           </p>
         )}
