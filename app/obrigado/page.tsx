@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { CheckCircle2, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function ThankYouPage() {
 
       <section className="relative mx-auto flex min-h-[90vh] max-w-2xl flex-col items-center justify-center px-6 text-center pt-32 pb-20">
         <div className="relative mb-8">
-          <img src="/Logo.svg" alt="CuidaLink" style={{ height: "180px", width: "auto" }} />
+          <img src="/Logo.svg" alt="CuidaLink" className="h-[180px] w-auto" />
         </div>
 
         <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">

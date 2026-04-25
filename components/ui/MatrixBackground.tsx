@@ -12,25 +12,9 @@ function FloatingCubeIcon() {
   );
 }
 
-function FloatingCube({
-  className,
-  size = 64,
-  rotate = 0,
-}: {
-  className?: string;
-  size?: number;
-  rotate?: number;
-}) {
+function FloatingCube({ className }: { className?: string }) {
   return (
-    <div
-      aria-hidden
-      className={className}
-      style={{
-        width: size,
-        height: size,
-        transform: `rotate(${rotate}deg)`,
-      }}
-    >
+    <div aria-hidden className={className}>
       <div className="relative w-full h-full rounded-xl grid place-items-center bg-[linear-gradient(135deg,rgba(34,197,94,0.10)_0%,rgba(34,197,94,0.03)_100%)] border border-[rgba(34,197,94,0.35)] shadow-[inset_0_0_20px_rgba(34,197,94,0.10),0_0_30px_rgba(34,197,94,0.15)] backdrop-blur-[2px]">
         <FloatingCubeIcon />
       </div>
@@ -38,28 +22,11 @@ function FloatingCube({
   );
 }
 
-function Particle({
-  top,
-  left,
-  size = 2,
-  opacity = 0.8,
-}: {
-  top: string;
-  left: string;
-  size?: number;
-  opacity?: number;
-}) {
+function Particle({ className }: { className?: string }) {
   return (
     <span
       aria-hidden
-      className="absolute rounded-full bg-[#4ade80] shadow-[0_0_6px_rgba(74,222,128,0.9)]"
-      style={{
-        top,
-        left,
-        width: size,
-        height: size,
-        opacity,
-      }}
+      className={`absolute rounded-full bg-[#4ade80] shadow-[0_0_6px_rgba(74,222,128,0.9)] ${className ?? ""}`}
     />
   );
 }
@@ -92,26 +59,26 @@ export function MatrixBackground() {
       />
 
       {/* Cubos flutuantes decorativos */}
-      <FloatingCube className="absolute top-[10%] left-[6%] animate-float" size={70} rotate={-12} />
-      <FloatingCube className="absolute top-[22%] right-[8%] animate-float" size={56} rotate={8} />
-      <FloatingCube className="absolute bottom-[14%] left-[10%] animate-float" size={80} rotate={6} />
-      <FloatingCube className="absolute bottom-[18%] right-[14%] animate-float" size={52} rotate={-10} />
-      <FloatingCube className="absolute top-[48%] left-[2%] hidden lg:block animate-float" size={44} rotate={14} />
-      <FloatingCube className="absolute top-[6%] right-[28%] hidden lg:block animate-float" size={40} rotate={-6} />
+      <FloatingCube className="absolute top-[10%] left-[6%] animate-float w-[70px] h-[70px] [transform:rotate(-12deg)]" />
+      <FloatingCube className="absolute top-[22%] right-[8%] animate-float w-[56px] h-[56px] [transform:rotate(8deg)]" />
+      <FloatingCube className="absolute bottom-[14%] left-[10%] animate-float w-[80px] h-[80px] [transform:rotate(6deg)]" />
+      <FloatingCube className="absolute bottom-[18%] right-[14%] animate-float w-[52px] h-[52px] [transform:rotate(-10deg)]" />
+      <FloatingCube className="absolute top-[48%] left-[2%] hidden lg:block animate-float w-[44px] h-[44px] [transform:rotate(14deg)]" />
+      <FloatingCube className="absolute top-[6%] right-[28%] hidden lg:block animate-float w-[40px] h-[40px] [transform:rotate(-6deg)]" />
 
       {/* Partículas */}
-      <Particle top="15%" left="20%" size={3} />
-      <Particle top="25%" left="72%" size={2} />
-      <Particle top="40%" left="35%" size={2} opacity={0.6} />
-      <Particle top="55%" left="88%" size={3} />
-      <Particle top="68%" left="12%" size={2} />
-      <Particle top="78%" left="48%" size={3} opacity={0.7} />
-      <Particle top="30%" left="50%" size={2} opacity={0.5} />
-      <Particle top="85%" left="78%" size={2} />
-      <Particle top="8%" left="55%" size={2} opacity={0.7} />
-      <Particle top="60%" left="60%" size={2} opacity={0.5} />
-      <Particle top="45%" left="18%" size={3} opacity={0.8} />
-      <Particle top="92%" left="38%" size={2} />
+      <Particle className="top-[15%] left-[20%] w-[3px] h-[3px] opacity-80" />
+      <Particle className="top-[25%] left-[72%] w-[2px] h-[2px] opacity-80" />
+      <Particle className="top-[40%] left-[35%] w-[2px] h-[2px] opacity-60" />
+      <Particle className="top-[55%] left-[88%] w-[3px] h-[3px] opacity-80" />
+      <Particle className="top-[68%] left-[12%] w-[2px] h-[2px] opacity-80" />
+      <Particle className="top-[78%] left-[48%] w-[3px] h-[3px] opacity-70" />
+      <Particle className="top-[30%] left-[50%] w-[2px] h-[2px] opacity-50" />
+      <Particle className="top-[85%] left-[78%] w-[2px] h-[2px] opacity-80" />
+      <Particle className="top-[8%] left-[55%] w-[2px] h-[2px] opacity-70" />
+      <Particle className="top-[60%] left-[60%] w-[2px] h-[2px] opacity-50" />
+      <Particle className="top-[45%] left-[18%] w-[3px] h-[3px] opacity-80" />
+      <Particle className="top-[92%] left-[38%] w-[2px] h-[2px] opacity-80" />
     </>
   );
 }

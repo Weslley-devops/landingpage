@@ -7,9 +7,8 @@ const steps = [
     number: 1,
     icon: (
       <Smartphone
-        className="h-8 w-8"
+        className="h-8 w-8 text-[#00E5C0]"
         strokeWidth={2}
-        style={{ color: "#00E5C0" }}
       />
     ),
     title: "Chegou aquela mensagem estranha?",
@@ -19,9 +18,8 @@ const steps = [
     number: 2,
     icon: (
       <CheckCircle2
-        className="h-8 w-8"
+        className="h-8 w-8 text-[#00E5C0]"
         strokeWidth={2}
-        style={{ color: "#00E5C0" }}
       />
     ),
     title: "Cola o link ou texto no CuidaLink — leva 3 segundos.",
@@ -31,9 +29,8 @@ const steps = [
     number: 3,
     icon: (
       <ShieldAlert
-        className="h-8 w-8"
+        className="h-8 w-8 text-[#FF4444]"
         strokeWidth={2}
-        style={{ color: "#FF4444" }}
       />
     ),
     title: "A resposta aparece na hora. Sem enrolação.",
@@ -43,22 +40,11 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section
-      className="relative py-24 md:py-28 overflow-hidden text-white"
-      style={{
-        backgroundColor: "#0d2818",
-        backgroundImage: "url(/blackgraud.png)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <section className="relative py-24 md:py-28 overflow-hidden text-white bg-[#0d2818] bg-[url(/blackgraud.png)] bg-cover bg-center bg-fixed bg-no-repeat">
       {/* Dark overlay */}
       <div
         aria-hidden
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: "rgba(0, 0, 0, 0.4)" }}
+        className="absolute inset-0 pointer-events-none bg-black/40"
       />
 
       <div className="relative z-10 mx-auto max-w-6xl px-6">
@@ -66,24 +52,14 @@ export function HowItWorks() {
           <div className="mx-auto flex max-w-2xl items-center justify-center gap-6">
             <span
               aria-hidden
-              className="h-px flex-1"
-              style={{ borderTop: "1px solid rgba(0,229,192,0.4)" }}
+              className="flex-1 border-t border-[rgba(0,229,192,0.4)]"
             />
-            <h2
-              className="text-center whitespace-nowrap"
-              style={{
-                color: "#00E5C0",
-                fontSize: "clamp(1.5rem, 3vw, 2rem)",
-                fontWeight: 800,
-                letterSpacing: "-0.01em",
-              }}
-            >
+            <h2 className="text-center whitespace-nowrap text-[#00E5C0] text-[clamp(1.5rem,3vw,2rem)] font-extrabold tracking-[-0.01em]">
               Como o CuidaLink funciona
             </h2>
             <span
               aria-hidden
-              className="h-px flex-1"
-              style={{ borderTop: "1px solid rgba(0,229,192,0.4)" }}
+              className="flex-1 border-t border-[rgba(0,229,192,0.4)]"
             />
           </div>
         </FadeIn>
