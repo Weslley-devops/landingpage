@@ -1,0 +1,53 @@
+import { forwardRef, type InputHTMLAttributes } from "react";
+import { cn } from "@/lib/utils";
+
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+  label: string;
+  error?: string;
+  optional?: boolean;
+};
+
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  function Input({ label, error, optional, className, id, ...rest }, ref) {
+    const inputId = id ?? rest.name;
+    return (
+      <div className="flex flex-col gap-1.5">
+        <label
+          htmlFor={inputId}
+          className="font-semibold uppercase tracking-[0.12em]"
+          style={{ color: "#00E5C0", fontSize: "0.75rem" }}
+        >
+          {label}
+          {optional && (
+            <span
+              className="ml-1 normal-case font-normal tracking-normal"
+              style={{ color: "rgba(0,229,192,0.6)" }}
+            >
+              (opcional)
+            </span>
+          )}
+        </label>
+        <input
+          ref={ref}
+          id={inputId}
+          aria-invalid={error ? true : undefined}
+          className={cn(
+            "lead-input w-full rounded-xl px-4 py-3.5 transition focus:outline-none",
+            error && "lead-input--error",
+            className,
+          )}
+          {...rest}
+        />
+        {error && (
+          <p
+            role="alert"
+            className="text-xs mt-0.5"
+            style={{ color: "#fca5a5" }}
+          >
+            {error}
+          </p>
+        )}
+      </div>
+    );
+  },
+);

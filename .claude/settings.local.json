@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(taskkill /PID 2564 /F)",
+      "Bash(cmd.exe /c \"taskkill /PID 2564 /F\")",
+      "Bash(cmd.exe /c \"taskkill /PID 2564 /F 2>&1\")",
+      "Bash(cmd.exe /c \"taskkill /PID 2564 /F & echo EXIT_CODE:%ERRORLEVEL%\")",
+      "Bash(powershell.exe -Command \"Stop-Process -Id 2564 -Force -ErrorAction SilentlyContinue; Write-Host 'Done'\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx tsc *)",
+      "Bash(npx next *)",
+      "Bash(npm run *)"
+    ]
+  }
+}
