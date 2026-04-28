@@ -33,9 +33,9 @@ export function Hero() {
   return (
     <section
       className={[
-        "relative text-white",
-        // Fundo verde-escuro WhatsApp + camadas radiais
-        "bg-[radial-gradient(ellipse_60%_70%_at_75%_50%,rgba(37,211,102,0.13)_0%,transparent_70%),radial-gradient(ellipse_40%_50%_at_20%_30%,rgba(18,140,126,0.08)_0%,transparent_60%),#0b1f13]",
+        "relative text-white bg-cover bg-center",
+        // Fundo cibernético com overlay escuro
+        "bg-[linear-gradient(rgba(11,31,19,0.65),rgba(11,31,19,0.65)),url('/cyber_bg.png')]",
       ].join(" ")}
     >
       {/* ══════════════════════════════════════════
