@@ -83,7 +83,7 @@ export function Hero() {
           ].join(" ")}
         >
           {/* ───── Coluna ESQUERDA — texto ───── */}
-          <div className="order-2 md:order-1 text-left flex flex-col items-start">
+          <div className="order-2 md:order-1 flex flex-col items-center text-center md:items-start md:text-left">
             {/* Badge */}
             <motion.span
               {...fadeUp(0.08)}
@@ -118,7 +118,7 @@ export function Hero() {
             {/* CTA */}
             <motion.div
               {...fadeUp(0.44)}
-              className="w-full md:w-auto"
+              className="w-full md:w-auto flex flex-col items-center md:items-start"
             >
               <Link
                 href="#acesso"
@@ -137,7 +137,7 @@ export function Hero() {
           </div>
 
           {/* ───── Coluna DIREITA — robô ───── */}
-          <div className="order-1 md:order-2 relative flex items-end justify-center min-h-[300px] md:min-h-[440px] mb-2 md:mb-0">
+          <div className="order-1 md:order-2 relative flex items-end justify-center min-h-[300px] md:min-h-[440px] mb-8 md:mb-0">
             {/* Glow externo */}
             <div
               aria-hidden
@@ -160,8 +160,8 @@ export function Hero() {
               alt="Robô CuidaLink"
               className={[
                 "relative z-[2] h-auto",
-                "w-[240px] md:w-[380px]",
-                "animate-float-robot mix-blend-screen",
+                "w-[80%] md:w-[95%] lg:w-full",
+                "mix-blend-screen",
                 "[filter:drop-shadow(0_0_24px_rgba(37,211,102,0.35))_drop-shadow(0_16px_48px_rgba(37,211,102,0.18))_brightness(1.05)_contrast(1.05)]",
               ].join(" ")}
             />
