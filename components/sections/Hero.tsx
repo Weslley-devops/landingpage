@@ -2,48 +2,63 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck, Shield, Zap, Clock } from "lucide-react";
 
 /* ─── Variantes de animação ─── */
 const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 28 },
+  initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const, delay },
+  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const, delay },
 });
+
+/* ─── Checkmark inline para o logo ─── */
+function CheckIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={3}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden
+    >
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+  );
+}
 
 export function Hero() {
   return (
-    <section className="relative isolate min-h-[100svh] flex flex-col overflow-hidden text-white bg-[#0d2818] bg-[url(/blackgraud.png)] bg-cover bg-center bg-no-repeat">
-      {/* Overlay escuro para legibilidade */}
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none z-0 bg-black/55"
-      />
-
+    <section className="bg-[#0d1a12] text-white">
       {/* ══════════════════════════════════════════
           NAVBAR
       ══════════════════════════════════════════ */}
-      <nav className="absolute top-0 left-0 right-0 z-20 w-full bg-transparent">
-        <div className="mx-auto w-full max-w-[1200px] flex items-center justify-between gap-3 px-4 py-3 min-h-[60px] md:px-8 md:py-5">
+      <nav className="sticky top-0 z-50 w-full border-b-[0.5px] border-white/[0.07] bg-[#0d1a12]/80 backdrop-blur-md">
+        <div className="mx-auto flex max-w-[1200px] items-center justify-between px-5 py-4 md:px-12 md:py-[18px]">
+          {/* Logo composto */}
           <a
             href="/"
-            className="flex items-center gap-2 no-underline cursor-pointer min-h-[44px]"
+            className="flex items-center gap-2.5 no-underline cursor-pointer min-h-[44px]"
           >
-            <img
-              src="/logo.svg"
-              alt="CuidaLink"
-              className="h-12 w-auto md:h-16"
-            />
-            <span className="text-[1.25rem] font-bold md:text-[1.6rem]">
+            <span
+              aria-hidden
+              className="grid h-9 w-9 place-items-center rounded-[10px] bg-[#22c55e] text-white"
+            >
+              <CheckIcon className="h-5 w-5" />
+            </span>
+            <span className="text-[18px] font-medium tracking-tight">
               <span className="text-white">Cuida</span>
               <span className="text-[#22c55e]">Link</span>
             </span>
           </a>
 
+          {/* Botão Entrar */}
           <Link
             href="#acesso"
             id="navbar-cta"
-            className="inline-flex items-center justify-center rounded-full border-2 border-white bg-transparent text-white font-semibold cursor-pointer transition-all duration-200 hover:-translate-y-px hover:bg-[#22c55e]/10 min-h-[44px] min-w-[44px] px-4 py-2 text-base md:px-6 md:text-[1.1rem]"
+            className="inline-flex items-center justify-center rounded-full bg-[#22c55e] text-[#0d1a12] font-semibold text-sm transition-all duration-200 hover:-translate-y-px hover:bg-[#1ea54e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22c55e]/60 min-h-[44px] min-w-[44px] px-5 py-[9px]"
           >
             Entrar
           </Link>
@@ -51,92 +66,103 @@ export function Hero() {
       </nav>
 
       {/* ══════════════════════════════════════════
-          HERO GRID — 3fr texto / 2fr robô
+          HERO — grid 1fr 1fr
       ══════════════════════════════════════════ */}
-      <div
-        className={[
-          "relative z-10 flex-1 w-full mx-auto max-w-[1200px] grid items-center",
-          // mobile: 1 coluna, padding 60px 24px (mais 60px de offset para a nav)
-          "grid-cols-1 gap-10 px-6 pt-[120px] pb-[60px]",
-          // desktop: 3fr 2fr, padding 80px 48px (+nav)
-          "md:grid-cols-[3fr_2fr] md:gap-12 md:px-12 md:pt-[140px] md:pb-20",
-        ].join(" ")}
-      >
-        {/* ───── Coluna ESQUERDA — texto ───── */}
-        <div className="hero__content order-2 md:order-1 text-center md:text-left flex flex-col items-center md:items-start gap-5 max-w-[640px] mx-auto md:mx-0">
-          {/* Badge */}
-          <motion.span
-            {...fadeUp(0.1)}
-            className="inline-flex items-center gap-2 rounded-full border border-[#22c55e]/30 bg-[#22c55e]/10 px-3.5 py-1.5 text-xs md:text-sm font-medium text-[#86efac] backdrop-blur-sm"
-          >
-            <span
-              aria-hidden
-              className="h-2 w-2 rounded-full bg-[#22c55e] shadow-[0_0_8px_rgba(34,197,94,0.85)] animate-pulse"
-            />
-            Proteção em tempo real
-          </motion.span>
-
-          {/* Headline */}
-          <motion.h1
-            {...fadeUp(0.22)}
-            className="font-extrabold text-white tracking-[-0.02em] [text-shadow:0_2px_20px_rgba(0,0,0,0.6)] text-[clamp(1.8rem,6vw,2.5rem)] leading-[1.2] md:text-[2.6rem] md:leading-[1.15] lg:text-[3.2rem]"
-          >
-            Seus pais podem cair em um golpe{" "}
-            <span className="text-[#ff4444] [text-shadow:0_0_40px_rgba(255,68,68,0.55),_0_2px_20px_rgba(0,0,0,0.5)]">
-              HOJE.
-            </span>{" "}
-            <span className="text-[#22c55e] font-bold [text-shadow:0_0_30px_rgba(34,197,94,0.45),_0_2px_14px_rgba(0,0,0,0.5)]">
-              Você conseguiria impedir?
-            </span>
-          </motion.h1>
-
-          {/* Subtítulo */}
-          <motion.p
-            {...fadeUp(0.44)}
-            className="text-white/90 font-normal leading-[1.6] [text-shadow:0_1px_12px_rgba(0,0,0,0.45)] text-base md:text-[1.15rem] lg:text-[1.25rem]"
-          >
-            Uma mensagem falsa parece real e em segundos pode fazer você
-            perder o dinheiro que levou anos pra conquistar.
-          </motion.p>
-
-          {/* CTA + aviso */}
-          <motion.div
-            {...fadeUp(0.58)}
-            className="w-full flex flex-col items-stretch gap-3 md:items-start md:w-auto"
-          >
-            <Link
-              href="#acesso"
-              id="hero-cta-primary"
-              className="inline-flex items-center justify-center gap-2 rounded-full text-white font-bold tracking-[-0.01em] transition-all duration-200 hover:-translate-y-1 active:translate-y-0 focus-visible:outline-none focus-visible:ring-4 bg-[#22c55e] shadow-[0_0_30px_rgba(34,197,94,0.4),0_20px_50px_-10px_rgba(34,197,94,0.65)] w-full min-h-[48px] px-6 py-4 text-base md:w-auto md:px-8 md:py-4 md:text-[1.15rem] lg:text-[1.25rem]"
+      <div className="mx-auto max-w-[1200px]">
+        <div
+          className={[
+            "grid items-center min-h-[520px]",
+            "grid-cols-1 gap-0 px-5 pt-12 pb-[52px]",
+            "md:grid-cols-2 md:px-12 md:pt-16 md:pb-[72px]",
+          ].join(" ")}
+        >
+          {/* ───── Coluna ESQUERDA — texto ───── */}
+          <div className="order-2 md:order-1 text-left flex flex-col items-start">
+            {/* Badge */}
+            <motion.span
+              {...fadeUp(0.08)}
+              className="inline-flex items-center gap-2 rounded-full bg-[rgba(34,197,94,0.1)] border-[0.5px] border-[rgba(34,197,94,0.25)] px-3.5 py-1.5 text-[12px] font-medium text-[#86efac] mb-[22px]"
             >
-              <ShieldCheck className="h-5 w-5 shrink-0" strokeWidth={2.4} />
-              <span>Quero proteger minha família AGORA</span>
-            </Link>
+              <span
+                aria-hidden
+                className="h-1.5 w-1.5 rounded-full bg-[#22c55e] shadow-[0_0_8px_rgba(34,197,94,0.85)] animate-pulse"
+              />
+              Proteção em tempo real
+            </motion.span>
 
-            <p className="inline-flex items-center justify-center md:justify-start gap-1.5 text-[#FBBF24] font-medium text-center w-full text-sm md:text-base [text-shadow:0_1px_10px_rgba(0,0,0,0.45)]">
-              <span aria-hidden>⚠</span> Acesso antecipado limitado
-            </p>
-          </motion.div>
-        </div>
+            {/* Headline */}
+            <motion.h1
+              {...fadeUp(0.18)}
+              className="font-bold text-white leading-[1.15] tracking-[-0.5px] mb-5 text-[28px] md:text-[40px]"
+            >
+              Seus pais podem cair em um golpe{" "}
+              <span className="text-[#ff4444]">HOJE.</span>{" "}
+              <span className="text-[#22c55e]">Você conseguiria impedir?</span>
+            </motion.h1>
 
-        {/* ───── Coluna DIREITA — robô ───── */}
-        <div className="hero__media order-1 md:order-2 relative flex items-center justify-center md:justify-end">
-          {/* Glow radial verde atrás do robô */}
-          <div
-            aria-hidden
-            className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.28)_0%,rgba(34,197,94,0.08)_45%,transparent_70%)] blur-2xl"
-          />
+            {/* Subtítulo */}
+            <motion.p
+              {...fadeUp(0.32)}
+              className="text-[14px] md:text-[15px] text-white/45 leading-[1.7] max-w-[440px] mb-8"
+            >
+              Uma mensagem falsa parece real e em segundos pode fazer você
+              perder o dinheiro que levou anos pra conquistar.
+            </motion.p>
 
-          <motion.div
-            {...fadeUp(0.3)}
-            className="relative z-10 w-full max-w-[300px] sm:max-w-[340px] md:max-w-[420px]"
-          >
-            <img
+            {/* CTA */}
+            <motion.div
+              {...fadeUp(0.44)}
+              className="w-full md:w-auto"
+            >
+              <Link
+                href="#acesso"
+                id="hero-cta-primary"
+                className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2.5 rounded-full bg-[#22c55e] text-[#0d1a12] font-semibold text-[14px] px-7 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1ea54e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22c55e]/60 mb-3.5 shadow-[0_8px_24px_-8px_rgba(34,197,94,0.5)]"
+              >
+                <ShieldCheck className="h-[17px] w-[17px] shrink-0" strokeWidth={2.4} />
+                <span>Quero proteger minha família AGORA</span>
+              </Link>
+
+              {/* Aviso */}
+              <p className="flex items-center gap-1.5 text-[12px] text-[rgba(255,200,50,0.7)]">
+                <span aria-hidden>⚠</span> Acesso antecipado limitado
+              </p>
+            </motion.div>
+          </div>
+
+          {/* ───── Coluna DIREITA — robô ───── */}
+          <div className="order-1 md:order-2 relative flex items-center justify-center md:min-h-[400px] mb-2 md:mb-0">
+            {/* Glow radial verde */}
+            <div
+              aria-hidden
+              className="absolute left-1/2 top-1/2 h-[340px] w-[340px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(34,197,94,0.15)_0%,transparent_70%)] pointer-events-none"
+            />
+
+            <motion.img
+              {...fadeUp(0.22)}
               src="/robo6.svg"
               alt="Robô CuidaLink"
-              className="w-full h-auto animate-float-robot [filter:drop-shadow(0_0_32px_rgba(34,197,94,0.18))]"
+              className="relative z-[1] h-auto w-[220px] md:w-[340px] animate-float-robot [filter:drop-shadow(0_8px_40px_rgba(34,197,94,0.22))]"
             />
-          </motion.div>
+          </div>
+        </div>
+
+        {/* ══════════════════════════════════════════
+            BADGES DE CREDIBILIDADE
+        ══════════════════════════════════════════ */}
+        <div className="border-t-[0.5px] border-white/[0.06] flex flex-row flex-wrap gap-[14px] md:gap-6 px-5 py-5 md:px-12 md:py-6">
+          <span className="inline-flex items-center gap-2 text-[12px] text-white/35">
+            <Zap className="h-[13px] w-[13px] shrink-0" strokeWidth={2} aria-hidden />
+            Gratuito para começar
+          </span>
+          <span className="inline-flex items-center gap-2 text-[12px] text-white/35">
+            <Shield className="h-[13px] w-[13px] shrink-0" strokeWidth={2} aria-hidden />
+            Dados protegidos
+          </span>
+          <span className="inline-flex items-center gap-2 text-[12px] text-white/35">
+            <Clock className="h-[13px] w-[13px] shrink-0" strokeWidth={2} aria-hidden />
+            Resultado em segundos
+          </span>
         </div>
       </div>
     </section>

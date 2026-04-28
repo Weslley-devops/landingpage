@@ -81,11 +81,11 @@ h1, h2, h3, h4 {
 
 @keyframes float-robot {
   0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-8px); }
+  50%      { transform: translateY(-12px); }
 }
 
 .animate-float-robot {
-  animation: float-robot 3s ease-in-out infinite;
+  animation: float-robot 3.5s ease-in-out infinite;
 }
 
 .lead-input {
