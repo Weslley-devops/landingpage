@@ -17,11 +17,11 @@ export function Hero() {
       {/* Overlay escuro para legibilidade */}
       <div
         aria-hidden
-        className="absolute inset-0 pointer-events-none z-0 bg-black/45"
+        className="absolute inset-0 pointer-events-none z-0 bg-black/55"
       />
 
       {/* ══════════════════════════════════════════
-          NAVBAR (absoluta — fora do flow flex do .hero)
+          NAVBAR
       ══════════════════════════════════════════ */}
       <nav className="absolute top-0 left-0 right-0 z-20 w-full bg-transparent">
         <div className="mx-auto w-full max-w-[1200px] flex items-center justify-between gap-3 px-4 py-3 min-h-[60px] md:px-8 md:py-5">
@@ -51,44 +51,41 @@ export function Hero() {
       </nav>
 
       {/* ══════════════════════════════════════════
-          BLOCO HERO — flex split content/media
+          HERO GRID — 3fr texto / 2fr robô
       ══════════════════════════════════════════ */}
       <div
         className={[
-          // mobile
-          "hero relative z-10 flex-1 w-full mx-auto max-w-[1200px]",
-          "flex flex-col items-center gap-8 px-4 pt-24 pb-10",
-          // desktop
-          "md:flex-row md:justify-between md:items-center md:gap-12 md:px-20 md:pt-28 md:pb-[60px]",
+          "relative z-10 flex-1 w-full mx-auto max-w-[1200px] grid items-center",
+          // mobile: 1 coluna, padding 60px 24px (mais 60px de offset para a nav)
+          "grid-cols-1 gap-10 px-6 pt-[120px] pb-[60px]",
+          // desktop: 3fr 2fr, padding 80px 48px (+nav)
+          "md:grid-cols-[3fr_2fr] md:gap-12 md:px-12 md:pt-[140px] md:pb-20",
         ].join(" ")}
       >
-        {/* MEDIA — vídeo do robozin */}
-        <div className="hero__media order-first w-full max-w-[400px] md:order-none md:flex-1 md:max-w-[500px]">
-          <motion.div {...fadeUp(0.1)}>
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
+        {/* ───── Coluna ESQUERDA — texto ───── */}
+        <div className="hero__content order-2 md:order-1 text-center md:text-left flex flex-col items-center md:items-start gap-5 max-w-[640px] mx-auto md:mx-0">
+          {/* Badge */}
+          <motion.span
+            {...fadeUp(0.1)}
+            className="inline-flex items-center gap-2 rounded-full border border-[#22c55e]/30 bg-[#22c55e]/10 px-3.5 py-1.5 text-xs md:text-sm font-medium text-[#86efac] backdrop-blur-sm"
+          >
+            <span
               aria-hidden
-              className="w-full h-auto rounded-2xl object-cover max-h-[300px] md:max-h-none shadow-[0_25px_60px_-20px_rgba(0,0,0,0.7)]"
-              src="/robozin.mp4"
+              className="h-2 w-2 rounded-full bg-[#22c55e] shadow-[0_0_8px_rgba(34,197,94,0.85)] animate-pulse"
             />
-          </motion.div>
-        </div>
+            Proteção em tempo real
+          </motion.span>
 
-        {/* CONTENT — texto + CTA */}
-        <div className="hero__content w-full text-center flex flex-col items-center gap-5 md:text-left md:items-start md:flex-1 md:max-w-[560px]">
           {/* Headline */}
           <motion.h1
             {...fadeUp(0.22)}
             className="font-extrabold text-white tracking-[-0.02em] [text-shadow:0_2px_20px_rgba(0,0,0,0.6)] text-[clamp(1.8rem,6vw,2.5rem)] leading-[1.2] md:text-[2.6rem] md:leading-[1.15] lg:text-[3.2rem]"
           >
             Seus pais podem cair em um golpe{" "}
-            <span className="text-[#FF6B6B] [text-shadow:0_0_40px_rgba(255,107,107,0.55),_0_2px_20px_rgba(0,0,0,0.5)]">
+            <span className="text-[#ff4444] [text-shadow:0_0_40px_rgba(255,68,68,0.55),_0_2px_20px_rgba(0,0,0,0.5)]">
               HOJE.
             </span>{" "}
-            <span className="text-[#4ADE80] font-bold [text-shadow:0_0_30px_rgba(74,222,128,0.45),_0_2px_14px_rgba(0,0,0,0.5)]">
+            <span className="text-[#22c55e] font-bold [text-shadow:0_0_30px_rgba(34,197,94,0.45),_0_2px_14px_rgba(0,0,0,0.5)]">
               Você conseguiria impedir?
             </span>
           </motion.h1>
@@ -119,6 +116,26 @@ export function Hero() {
             <p className="inline-flex items-center justify-center md:justify-start gap-1.5 text-[#FBBF24] font-medium text-center w-full text-sm md:text-base [text-shadow:0_1px_10px_rgba(0,0,0,0.45)]">
               <span aria-hidden>⚠</span> Acesso antecipado limitado
             </p>
+          </motion.div>
+        </div>
+
+        {/* ───── Coluna DIREITA — robô ───── */}
+        <div className="hero__media order-1 md:order-2 relative flex items-center justify-center md:justify-end">
+          {/* Glow radial verde atrás do robô */}
+          <div
+            aria-hidden
+            className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.28)_0%,rgba(34,197,94,0.08)_45%,transparent_70%)] blur-2xl"
+          />
+
+          <motion.div
+            {...fadeUp(0.3)}
+            className="relative z-10 w-full max-w-[300px] sm:max-w-[340px] md:max-w-[420px]"
+          >
+            <img
+              src="/robo6.svg"
+              alt="Robô CuidaLink"
+              className="w-full h-auto animate-float-robot [filter:drop-shadow(0_0_32px_rgba(34,197,94,0.18))]"
+            />
           </motion.div>
         </div>
       </div>

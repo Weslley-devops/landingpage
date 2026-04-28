@@ -79,6 +79,15 @@ h1, h2, h3, h4 {
   animation: float-slow 6s ease-in-out infinite;
 }
 
+@keyframes float-robot {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+.animate-float-robot {
+  animation: float-robot 3s ease-in-out infinite;
+}
+
 .lead-input {
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(0, 229, 192, 0.2);
