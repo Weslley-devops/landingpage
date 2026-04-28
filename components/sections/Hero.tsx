@@ -33,9 +33,10 @@ export function Hero() {
   return (
     <section
       className={[
-        "relative text-white bg-cover bg-center",
-        // Fundo cibernético com overlay escuro
-        "bg-[linear-gradient(rgba(11,31,19,0.65),rgba(11,31,19,0.65)),url('/cyber_bg.png')]",
+        "relative text-white",
+        // Fundo premium escuro minimalista, com overlay (rgba(0,0,0,0.4))
+        "bg-[linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('/blackgraud.png')]",
+        "bg-cover bg-center bg-fixed",
       ].join(" ")}
     >
       {/* ══════════════════════════════════════════
