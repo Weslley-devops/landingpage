@@ -2,7 +2,7 @@ function FloatingCubeIcon() {
   return (
     <svg
       viewBox="0 0 24 24"
-      className="h-6 w-6 text-[#22c55e]"
+      className="h-6 w-6 text-[#25D366]"
       fill="none"
       stroke="currentColor"
       strokeWidth="1.8"
@@ -15,7 +15,7 @@ function FloatingCubeIcon() {
 function FloatingCube({ className }: { className?: string }) {
   return (
     <div aria-hidden className={className}>
-      <div className="relative w-full h-full rounded-xl grid place-items-center bg-[linear-gradient(135deg,rgba(34,197,94,0.10)_0%,rgba(34,197,94,0.03)_100%)] border border-[rgba(34,197,94,0.35)] shadow-[inset_0_0_20px_rgba(34,197,94,0.10),0_0_30px_rgba(34,197,94,0.15)] backdrop-blur-[2px]">
+      <div className="relative w-full h-full rounded-xl grid place-items-center bg-[linear-gradient(135deg,rgba(37,211,102,0.10)_0%,rgba(37,211,102,0.03)_100%)] border border-[rgba(37,211,102,0.35)] shadow-[inset_0_0_20px_rgba(37,211,102,0.10),0_0_30px_rgba(37,211,102,0.15)] backdrop-blur-[2px]">
         <FloatingCubeIcon />
       </div>
     </div>
@@ -43,19 +43,19 @@ export function MatrixBackground() {
       {/* Grade em perspectiva — piso matrix */}
       <div
         aria-hidden
-        className="absolute inset-0 pointer-events-none origin-top opacity-90 bg-[linear-gradient(to_right,transparent_0%,rgba(34,197,94,0.35)_50%,transparent_100%)_0_0_/_100%_1px_no-repeat,repeating-linear-gradient(0deg,rgba(34,197,94,0.22)_0_1px,transparent_1px_80px),repeating-linear-gradient(90deg,rgba(34,197,94,0.22)_0_1px,transparent_1px_80px)] [transform:perspective(700px)_rotateX(62deg)_translateY(32%)_scale(1.8)] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black_20%,transparent_80%)] [-webkit-mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black_20%,transparent_80%)]"
+        className="absolute inset-0 pointer-events-none origin-top opacity-90 bg-[linear-gradient(to_right,transparent_0%,rgba(37,211,102,0.35)_50%,transparent_100%)_0_0_/_100%_1px_no-repeat,repeating-linear-gradient(0deg,rgba(37,211,102,0.22)_0_1px,transparent_1px_80px),repeating-linear-gradient(90deg,rgba(37,211,102,0.22)_0_1px,transparent_1px_80px)] [transform:perspective(700px)_rotateX(62deg)_translateY(32%)_scale(1.8)] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black_20%,transparent_80%)] [-webkit-mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black_20%,transparent_80%)]"
       />
 
       {/* Grade de teto (espelhada) */}
       <div
         aria-hidden
-        className="absolute inset-0 pointer-events-none origin-bottom opacity-[0.55] bg-[repeating-linear-gradient(0deg,rgba(34,197,94,0.14)_0_1px,transparent_1px_80px),repeating-linear-gradient(90deg,rgba(34,197,94,0.14)_0_1px,transparent_1px_80px)] [transform:perspective(700px)_rotateX(-62deg)_translateY(-32%)_scale(1.8)] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_100%,black_20%,transparent_80%)] [-webkit-mask-image:radial-gradient(ellipse_70%_60%_at_50%_100%,black_20%,transparent_80%)]"
+        className="absolute inset-0 pointer-events-none origin-bottom opacity-[0.55] bg-[repeating-linear-gradient(0deg,rgba(37,211,102,0.14)_0_1px,transparent_1px_80px),repeating-linear-gradient(90deg,rgba(37,211,102,0.14)_0_1px,transparent_1px_80px)] [transform:perspective(700px)_rotateX(-62deg)_translateY(-32%)_scale(1.8)] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_100%,black_20%,transparent_80%)] [-webkit-mask-image:radial-gradient(ellipse_70%_60%_at_50%_100%,black_20%,transparent_80%)]"
       />
 
       {/* Glow radial central */}
       <div
         aria-hidden
-        className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_55%_at_50%_50%,rgba(34,197,94,0.28)_0%,rgba(34,197,94,0.10)_35%,transparent_70%)]"
+        className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_55%_at_50%_50%,rgba(37,211,102,0.28)_0%,rgba(37,211,102,0.10)_35%,transparent_70%)]"
       />
 
       {/* Cubos flutuantes decorativos */}

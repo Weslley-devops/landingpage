@@ -13,7 +13,7 @@ export function Navbar({ variant: _variant = "dark" }: NavbarProps) {
           <img src="/logo.svg" alt="CuidaLink" className="h-20 w-auto" />
           <span className="text-[1.8rem] font-bold">
             <span className="text-white">Cuida</span>
-            <span className="text-[#22c55e]">Link</span>
+            <span className="text-[#25D366]">Link</span>
           </span>
         </a>
       </div>

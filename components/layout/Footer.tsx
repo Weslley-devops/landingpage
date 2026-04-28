@@ -16,7 +16,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export function Footer() {
   return (
-    <footer className="bg-[#0d2818] border-t border-[rgba(34,197,94,0.35)] py-6 px-4 md:p-8">
+    <footer className="bg-[#0d2818] border-t border-[rgba(37,211,102,0.35)] py-6 px-4 md:p-8">
       <div className="mx-auto max-w-[1200px] flex flex-col items-center gap-4 md:flex-row md:justify-between">
         <p className="text-center md:text-left text-white text-[0.85rem] md:text-[0.95rem] leading-relaxed">
           &copy; {new Date().getFullYear()} {site.name}. Protegendo famílias
@@ -31,14 +31,14 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Fale conosco no WhatsApp"
-            className="group grid h-11 w-11 place-items-center rounded-full text-white transition hover:scale-105 bg-[#22c55e]"
+            className="group grid h-11 w-11 place-items-center rounded-full text-white transition hover:scale-105 bg-[#25D366]"
           >
             <WhatsAppIcon className="h-5 w-5" />
           </a>
           <a
             href={site.email.href}
             aria-label="Enviar e-mail"
-            className="group grid h-11 w-11 place-items-center rounded-full text-white transition hover:scale-105 bg-[#22c55e]"
+            className="group grid h-11 w-11 place-items-center rounded-full text-white transition hover:scale-105 bg-[#25D366]"
           >
             <Mail className="h-5 w-5" strokeWidth={2} />
           </a>

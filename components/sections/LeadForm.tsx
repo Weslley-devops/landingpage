@@ -120,7 +120,7 @@ export function LeadForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="mt-2 inline-flex w-full min-h-[48px] items-center justify-center gap-2 rounded-xl px-6 py-4 font-bold text-white text-base transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 bg-[#22C55E] shadow-[0_18px_40px_-15px_rgba(34,197,94,0.55),0_4px_10px_-2px_rgba(34,197,94,0.25)]"
+                className="mt-2 inline-flex w-full min-h-[48px] items-center justify-center gap-2 rounded-xl px-6 py-4 font-bold text-white text-base transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 bg-[#25D366] shadow-[0_18px_40px_-15px_rgba(37,211,102,0.55),0_4px_10px_-2px_rgba(37,211,102,0.25)]"
               >
                 {isSubmitting ? (
                   <>

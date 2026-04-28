@@ -87,7 +87,7 @@ export function Problem() {
             delay={0.15}
             className="self-stretch md:self-start md:ml-2"
           >
-            <div className="relative w-full max-w-full md:max-w-[280px] rounded-2xl bg-white px-4 py-4 md:px-5 md:-rotate-2 border-2 border-[rgba(255,255,255,0.95)] shadow-[0_0_0_1px_rgba(34,197,94,0.25),0_0_28px_rgba(255,255,255,0.25),0_25px_60px_-18px_rgba(0,0,0,0.55)]">
+            <div className="relative w-full max-w-full md:max-w-[280px] rounded-2xl bg-white px-4 py-4 md:px-5 md:-rotate-2 border-2 border-[rgba(255,255,255,0.95)] shadow-[0_0_0_1px_rgba(37,211,102,0.25),0_0_28px_rgba(255,255,255,0.25),0_25px_60px_-18px_rgba(0,0,0,0.55)]">
               <div className="flex items-center gap-2 font-bold text-[#0B2E24] text-sm md:text-base">
                 <Package
                   className="h-5 w-5 text-[#14b8a6] shrink-0"
@@ -110,7 +110,7 @@ export function Problem() {
             delay={0.25}
             className="self-stretch md:self-start md:ml-[252px]"
           >
-            <div className="relative w-full max-w-full md:max-w-[280px] rounded-2xl bg-white px-4 py-4 md:px-5 md:rotate-2 border-2 border-[rgba(255,255,255,0.95)] shadow-[0_0_0_1px_rgba(34,197,94,0.25),0_0_28px_rgba(255,255,255,0.25),0_25px_60px_-18px_rgba(0,0,0,0.55)]">
+            <div className="relative w-full max-w-full md:max-w-[280px] rounded-2xl bg-white px-4 py-4 md:px-5 md:rotate-2 border-2 border-[rgba(255,255,255,0.95)] shadow-[0_0_0_1px_rgba(37,211,102,0.25),0_0_28px_rgba(255,255,255,0.25),0_25px_60px_-18px_rgba(0,0,0,0.55)]">
               <div className="flex items-center gap-2 font-bold text-[#0B2E24] text-sm md:text-base">
                 <MessageCircle
                   className="h-5 w-5 text-[#14b8a6] shrink-0"

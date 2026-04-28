@@ -31,11 +31,17 @@ function CheckIcon({ className }: { className?: string }) {
 
 export function Hero() {
   return (
-    <section className="bg-[#0d1a12] text-white">
+    <section
+      className={[
+        "relative text-white",
+        // Fundo verde-escuro WhatsApp + camadas radiais
+        "bg-[radial-gradient(ellipse_60%_70%_at_75%_50%,rgba(37,211,102,0.13)_0%,transparent_70%),radial-gradient(ellipse_40%_50%_at_20%_30%,rgba(18,140,126,0.08)_0%,transparent_60%),#0b1f13]",
+      ].join(" ")}
+    >
       {/* ══════════════════════════════════════════
           NAVBAR
       ══════════════════════════════════════════ */}
-      <nav className="sticky top-0 z-50 w-full border-b-[0.5px] border-white/[0.07] bg-[#0d1a12]/80 backdrop-blur-md">
+      <nav className="sticky top-0 z-50 w-full border-b-[0.5px] border-[rgba(37,211,102,0.12)] bg-[#0b1f13]/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-5 py-4 md:px-12 md:py-[18px]">
           {/* Logo composto */}
           <a
@@ -44,13 +50,13 @@ export function Hero() {
           >
             <span
               aria-hidden
-              className="grid h-9 w-9 place-items-center rounded-[10px] bg-[#22c55e] text-white"
+              className="grid h-9 w-9 place-items-center rounded-[10px] bg-[#25D366] text-white"
             >
               <CheckIcon className="h-5 w-5" />
             </span>
             <span className="text-[18px] font-medium tracking-tight">
               <span className="text-white">Cuida</span>
-              <span className="text-[#22c55e]">Link</span>
+              <span className="text-[#25D366]">Link</span>
             </span>
           </a>
 
@@ -58,7 +64,7 @@ export function Hero() {
           <Link
             href="#acesso"
             id="navbar-cta"
-            className="inline-flex items-center justify-center rounded-full bg-[#22c55e] text-[#0d1a12] font-semibold text-sm transition-all duration-200 hover:-translate-y-px hover:bg-[#1ea54e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22c55e]/60 min-h-[44px] min-w-[44px] px-5 py-[9px]"
+            className="inline-flex items-center justify-center rounded-full bg-[#25D366] text-[#0b1f13] font-semibold text-sm transition-all duration-200 hover:-translate-y-px hover:bg-[#1EBE5D] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/60 min-h-[44px] min-w-[44px] px-5 py-[9px]"
           >
             Entrar
           </Link>
@@ -81,11 +87,11 @@ export function Hero() {
             {/* Badge */}
             <motion.span
               {...fadeUp(0.08)}
-              className="inline-flex items-center gap-2 rounded-full bg-[rgba(34,197,94,0.1)] border-[0.5px] border-[rgba(34,197,94,0.25)] px-3.5 py-1.5 text-[12px] font-medium text-[#86efac] mb-[22px]"
+              className="inline-flex items-center gap-2 rounded-full bg-[rgba(37,211,102,0.1)] border-[0.5px] border-[rgba(37,211,102,0.3)] px-3.5 py-1.5 text-[12px] font-medium text-[#86efac] mb-[22px]"
             >
               <span
                 aria-hidden
-                className="h-1.5 w-1.5 rounded-full bg-[#22c55e] shadow-[0_0_8px_rgba(34,197,94,0.85)] animate-pulse"
+                className="h-1.5 w-1.5 rounded-full bg-[#25D366] shadow-[0_0_8px_rgba(37,211,102,0.85)] animate-pulse"
               />
               Proteção em tempo real
             </motion.span>
@@ -97,7 +103,7 @@ export function Hero() {
             >
               Seus pais podem cair em um golpe{" "}
               <span className="text-[#ff4444]">HOJE.</span>{" "}
-              <span className="text-[#22c55e]">Você conseguiria impedir?</span>
+              <span className="text-[#25D366]">Você conseguiria impedir?</span>
             </motion.h1>
 
             {/* Subtítulo */}
@@ -117,7 +123,7 @@ export function Hero() {
               <Link
                 href="#acesso"
                 id="hero-cta-primary"
-                className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2.5 rounded-full bg-[#22c55e] text-[#0d1a12] font-semibold text-[14px] px-7 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1ea54e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22c55e]/60 mb-3.5 shadow-[0_8px_24px_-8px_rgba(34,197,94,0.5)]"
+                className="inline-flex w-full md:w-auto items-center justify-center md:justify-start gap-2.5 rounded-full bg-[#25D366] text-[#0b1f13] font-semibold text-[14px] px-7 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#1EBE5D] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]/60 mb-3.5 shadow-[0_8px_24px_-8px_rgba(37,211,102,0.5)]"
               >
                 <ShieldCheck className="h-[17px] w-[17px] shrink-0" strokeWidth={2.4} />
                 <span>Quero proteger minha família AGORA</span>
@@ -131,18 +137,33 @@ export function Hero() {
           </div>
 
           {/* ───── Coluna DIREITA — robô ───── */}
-          <div className="order-1 md:order-2 relative flex items-center justify-center md:min-h-[400px] mb-2 md:mb-0">
-            {/* Glow radial verde */}
+          <div className="order-1 md:order-2 relative flex items-end justify-center min-h-[300px] md:min-h-[440px] mb-2 md:mb-0">
+            {/* Glow externo */}
             <div
               aria-hidden
-              className="absolute left-1/2 top-1/2 h-[340px] w-[340px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(34,197,94,0.15)_0%,transparent_70%)] pointer-events-none"
+              className="absolute left-1/2 bottom-0 -translate-x-1/2 pointer-events-none rounded-full w-[280px] h-[280px] md:w-[440px] md:h-[440px] bg-[radial-gradient(ellipse_at_50%_85%,rgba(37,211,102,0.22)_0%,rgba(18,140,126,0.10)_40%,transparent_70%)]"
+            />
+            {/* Glow interno */}
+            <div
+              aria-hidden
+              className="absolute left-1/2 bottom-0 -translate-x-1/2 pointer-events-none w-[280px] h-[200px] bg-[radial-gradient(ellipse_at_50%_100%,rgba(37,211,102,0.30)_0%,transparent_60%)]"
+            />
+            {/* Sombra no chão */}
+            <div
+              aria-hidden
+              className="absolute left-1/2 -translate-x-1/2 bottom-1 pointer-events-none w-[200px] h-[18px] rounded-full bg-[rgba(37,211,102,0.18)] blur-[8px]"
             />
 
             <motion.img
               {...fadeUp(0.22)}
               src="/robo6.svg"
               alt="Robô CuidaLink"
-              className="relative z-[1] h-auto w-[220px] md:w-[340px] animate-float-robot [filter:drop-shadow(0_8px_40px_rgba(34,197,94,0.22))]"
+              className={[
+                "relative z-[2] h-auto",
+                "w-[240px] md:w-[380px]",
+                "animate-float-robot mix-blend-screen",
+                "[filter:drop-shadow(0_0_24px_rgba(37,211,102,0.35))_drop-shadow(0_16px_48px_rgba(37,211,102,0.18))_brightness(1.05)_contrast(1.05)]",
+              ].join(" ")}
             />
           </div>
         </div>
@@ -150,7 +171,7 @@ export function Hero() {
         {/* ══════════════════════════════════════════
             BADGES DE CREDIBILIDADE
         ══════════════════════════════════════════ */}
-        <div className="border-t-[0.5px] border-white/[0.06] flex flex-row flex-wrap gap-[14px] md:gap-6 px-5 py-5 md:px-12 md:py-6">
+        <div className="border-t-[0.5px] border-[rgba(37,211,102,0.12)] flex flex-row flex-wrap gap-[14px] md:gap-6 px-5 py-5 md:px-12 md:py-6">
           <span className="inline-flex items-center gap-2 text-[12px] text-white/35">
             <Zap className="h-[13px] w-[13px] shrink-0" strokeWidth={2} aria-hidden />
             Gratuito para começar

@@ -27,7 +27,7 @@ export default function ThankYouPage() {
 
           <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
             Obrigado! <br />
-            <span className="text-[#22c55e]">Sua vaga está garantida.</span>
+            <span className="text-[#25D366]">Sua vaga está garantida.</span>
           </h1>
 
           <p className="mt-6 max-w-lg text-base md:text-lg text-white/80 leading-relaxed">
@@ -38,7 +38,7 @@ export default function ThankYouPage() {
 
           <Link
             href="/"
-            className="mt-10 inline-flex items-center gap-2 rounded-full border border-[#22c55e]/40 bg-[#22c55e]/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-[#22c55e]/20 hover:border-[#22c55e]"
+            className="mt-10 inline-flex items-center gap-2 rounded-full border border-[#25D366]/40 bg-[#25D366]/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-[#25D366]/20 hover:border-[#25D366]"
           >
             <ArrowLeft className="h-4 w-4" />
             Voltar para o início
