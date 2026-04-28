@@ -77,13 +77,13 @@ export function Hero() {
       <div className="mx-auto max-w-[1200px]">
         <div
           className={[
-            "grid items-center min-h-[520px]",
-            "grid-cols-1 gap-0 px-5 pt-12 pb-[52px]",
-            "md:grid-cols-2 md:px-12 md:pt-16 md:pb-[72px]",
+            "flex flex-col-reverse items-center min-h-[520px]",
+            "gap-0 px-5 pt-12 pb-[52px]",
+            "md:flex-row md:px-12 md:pt-16 md:pb-[72px]",
           ].join(" ")}
         >
           {/* ───── Coluna ESQUERDA — texto ───── */}
-          <div className="order-2 md:order-1 flex flex-col items-center text-center md:items-start md:text-left">
+          <div className="w-full md:w-1/2 flex flex-col items-center text-center md:items-start md:text-left">
             {/* Badge */}
             <motion.span
               {...fadeUp(0.08)}
@@ -137,7 +137,7 @@ export function Hero() {
           </div>
 
           {/* ───── Coluna DIREITA — robô ───── */}
-          <div className="order-1 md:order-2 relative flex items-end justify-center min-h-[300px] md:min-h-[440px] mb-8 md:mb-0">
+          <div className="w-full md:w-1/2 relative flex items-center justify-center min-h-[300px] md:min-h-[440px] mb-8 md:mb-0">
             {/* Glow externo */}
             <div
               aria-hidden
@@ -154,13 +154,12 @@ export function Hero() {
               className="absolute left-1/2 -translate-x-1/2 bottom-1 pointer-events-none w-[200px] h-[18px] rounded-full bg-[rgba(37,211,102,0.18)] blur-[8px]"
             />
 
-            <motion.img
-              {...fadeUp(0.22)}
+            <img
               src="/robo6.svg"
               alt="Robô CuidaLink"
               className={[
                 "relative z-[2] h-auto",
-                "w-[80%] md:w-[95%] lg:w-full",
+                "w-4/5 md:w-[600px] md:scale-125 lg:scale-150",
                 "mix-blend-screen",
                 "[filter:drop-shadow(0_0_24px_rgba(37,211,102,0.35))_drop-shadow(0_16px_48px_rgba(37,211,102,0.18))_brightness(1.05)_contrast(1.05)]",
               ].join(" ")}
