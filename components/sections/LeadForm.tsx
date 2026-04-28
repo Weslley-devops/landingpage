@@ -60,7 +60,7 @@ export function LeadForm() {
   return (
     <section
       id="acesso"
-      className="relative overflow-hidden py-24 md:py-28 bg-[#0d2818] bg-[url(/blackgraud.png)] bg-cover bg-center bg-fixed bg-no-repeat"
+      className="relative overflow-hidden py-12 md:py-24 lg:py-28 bg-[#0d2818] bg-[url(/blackgraud.png)] bg-cover bg-center md:bg-fixed bg-no-repeat"
     >
       {/* Dark overlay */}
       <div
@@ -68,17 +68,17 @@ export function LeadForm() {
         className="absolute inset-0 pointer-events-none bg-black/40"
       />
 
-      <div className="relative z-10 mx-auto px-6 max-w-[820px] w-[95%]">
+      <div className="relative z-10 mx-auto px-4 md:px-8 max-w-[480px] md:max-w-[560px] w-full">
         <FadeIn>
-          <div className="bg-white/5 border border-[rgba(0,229,192,0.25)] backdrop-blur-[12px] rounded-[20px] p-14 shadow-[0_0_30px_rgba(0,229,192,0.08),0_8px_32px_rgba(0,0,0,0.4)]">
-            <h2 className="text-white text-[clamp(1.75rem,3.5vw,2.25rem)] font-extrabold leading-[1.15] tracking-[-0.02em]">
+          <div className="bg-white/5 border border-[rgba(0,229,192,0.25)] backdrop-blur-[12px] rounded-[20px] p-6 sm:p-8 md:p-12 lg:p-14 shadow-[0_0_30px_rgba(0,229,192,0.08),0_8px_32px_rgba(0,0,0,0.4)]">
+            <h2 className="text-white text-[clamp(1.5rem,5vw,2.25rem)] font-extrabold leading-[1.2] tracking-[-0.02em]">
               Quero acesso antecipado
             </h2>
-            <p className="mt-2 text-white/60 text-base leading-normal">
+            <p className="mt-2 text-white/60 text-sm md:text-base leading-normal">
               Rápido, gratuito e sem compromisso.
             </p>
 
-            <form onSubmit={onSubmit} noValidate className="mt-8 flex flex-col gap-5">
+            <form onSubmit={onSubmit} noValidate className="mt-6 md:mt-8 flex flex-col gap-4 md:gap-5">
               <Input
                 label="Seu nome"
                 placeholder="Ex: João Silva"
@@ -120,7 +120,7 @@ export function LeadForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-4 font-bold text-white transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 bg-[#22C55E] text-[1.0625rem] shadow-[0_18px_40px_-15px_rgba(34,197,94,0.55),0_4px_10px_-2px_rgba(34,197,94,0.25)]"
+                className="mt-2 inline-flex w-full min-h-[48px] items-center justify-center gap-2 rounded-xl px-6 py-4 font-bold text-white text-base transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-4 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 bg-[#22C55E] shadow-[0_18px_40px_-15px_rgba(34,197,94,0.55),0_4px_10px_-2px_rgba(34,197,94,0.25)]"
               >
                 {isSubmitting ? (
                   <>

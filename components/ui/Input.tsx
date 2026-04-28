@@ -28,7 +28,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           id={inputId}
           aria-invalid={error ? "true" : "false"}
           className={cn(
-            "lead-input w-full rounded-xl px-4 py-3.5 transition focus:outline-none",
+            "lead-input w-full min-h-[48px] rounded-lg px-3 py-3 text-base transition focus:outline-none",
             error && "lead-input--error",
             className,
           )}

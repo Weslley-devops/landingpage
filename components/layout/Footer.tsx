@@ -16,9 +16,9 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export function Footer() {
   return (
-    <footer className="bg-[#0d2818] border-t border-[rgba(34,197,94,0.35)] p-8">
-      <div className="mx-auto max-w-6xl flex flex-col items-center gap-4 md:flex-row md:justify-between">
-        <p className="text-center md:text-left text-white text-[0.95rem]">
+    <footer className="bg-[#0d2818] border-t border-[rgba(34,197,94,0.35)] py-6 px-4 md:p-8">
+      <div className="mx-auto max-w-[1200px] flex flex-col items-center gap-4 md:flex-row md:justify-between">
+        <p className="text-center md:text-left text-white text-[0.85rem] md:text-[0.95rem] leading-relaxed">
           &copy; {new Date().getFullYear()} {site.name}. Protegendo famílias
           brasileiras contra golpes.
         </p>
