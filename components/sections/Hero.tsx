@@ -36,7 +36,7 @@ export function Hero() {
         "relative text-white",
         // Fundo premium escuro minimalista, com overlay (rgba(0,0,0,0.4))
         "bg-[linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('/blackgraud.png')]",
-        "bg-cover bg-center bg-fixed overflow-hidden",
+        "bg-cover bg-center bg-fixed",
       ].join(" ")}
     >
       {/* ══════════════════════════════════════════
@@ -138,11 +138,11 @@ export function Hero() {
           </div>
 
           {/* ───── Coluna DIREITA — robô ───── */}
-          <div className="w-full md:w-1/2 relative flex items-center justify-center min-h-[300px] md:min-h-[440px] mb-8 md:mb-0">
+          <div className="w-full md:w-1/2 flex items-center justify-center min-h-[300px] md:min-h-[440px] mb-8 md:mb-0 md:static">
             <img
               src="/robo6.svg"
               alt="Robô CuidaLink"
-              className="relative z-[2] w-[95%] max-w-[420px] h-auto md:max-w-none md:absolute md:w-auto md:h-[800px] lg:h-[950px] xl:h-[1100px] md:right-[-35%] lg:right-[-25%] xl:right-[-15%] md:top-1/2 md:-translate-y-1/2 object-contain pointer-events-none"
+              className="relative z-[2] w-[95%] max-w-[420px] h-auto md:max-w-none md:absolute md:right-0 md:bottom-0 md:w-auto md:h-[100%] md:object-contain md:object-right-bottom pointer-events-none"
             />
           </div>
         </div>
