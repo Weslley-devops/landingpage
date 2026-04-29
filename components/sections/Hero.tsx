@@ -139,31 +139,10 @@ export function Hero() {
 
           {/* ───── Coluna DIREITA — robô ───── */}
           <div className="w-full md:w-1/2 relative flex items-center justify-center min-h-[300px] md:min-h-[440px] mb-8 md:mb-0">
-            {/* Glow externo */}
-            <div
-              aria-hidden
-              className="absolute left-1/2 bottom-0 -translate-x-1/2 pointer-events-none rounded-full w-[280px] h-[280px] md:w-[440px] md:h-[440px] bg-[radial-gradient(ellipse_at_50%_85%,rgba(37,211,102,0.22)_0%,rgba(18,140,126,0.10)_40%,transparent_70%)]"
-            />
-            {/* Glow interno */}
-            <div
-              aria-hidden
-              className="absolute left-1/2 bottom-0 -translate-x-1/2 pointer-events-none w-[280px] h-[200px] bg-[radial-gradient(ellipse_at_50%_100%,rgba(37,211,102,0.30)_0%,transparent_60%)]"
-            />
-            {/* Sombra no chão */}
-            <div
-              aria-hidden
-              className="absolute left-1/2 -translate-x-1/2 bottom-1 pointer-events-none w-[200px] h-[18px] rounded-full bg-[rgba(37,211,102,0.18)] blur-[8px]"
-            />
-
             <img
               src="/robo6.svg"
               alt="Robô CuidaLink"
-              className={[
-                "relative z-[2] h-auto",
-                "w-4/5 md:w-[600px] md:scale-125 lg:scale-150",
-                "mix-blend-screen",
-                "[filter:drop-shadow(0_0_24px_rgba(37,211,102,0.35))_drop-shadow(0_16px_48px_rgba(37,211,102,0.18))_brightness(1.05)_contrast(1.05)]",
-              ].join(" ")}
+              className="relative z-[2] h-auto w-[90%] md:w-[700px] lg:w-[850px] max-w-none"
             />
           </div>
         </div>
