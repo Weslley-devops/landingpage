@@ -142,7 +142,7 @@ export function Hero() {
             <img
               src="/robo6.svg"
               alt="Robô CuidaLink"
-              className="relative z-[2] w-[80%] max-w-[320px] h-auto md:max-w-none md:absolute md:w-auto md:h-[650px] lg:h-[750px] xl:h-[850px] md:right-[-25%] lg:right-[-15%] xl:right-[-5%] md:top-1/2 md:-translate-y-1/2 object-contain pointer-events-none"
+              className="relative z-[2] w-[95%] max-w-[420px] h-auto md:max-w-none md:absolute md:w-auto md:h-[800px] lg:h-[950px] xl:h-[1100px] md:right-[-35%] lg:right-[-25%] xl:right-[-15%] md:top-1/2 md:-translate-y-1/2 object-contain pointer-events-none"
             />
           </div>
         </div>
