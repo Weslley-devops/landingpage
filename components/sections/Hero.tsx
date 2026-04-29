@@ -33,7 +33,7 @@ export function Hero() {
   return (
     <section
       className={[
-        "relative text-white",
+        "relative text-white overflow-hidden",
         // Fundo premium escuro minimalista, com overlay (rgba(0,0,0,0.4))
         "bg-[linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('/blackgraud.png')]",
         "bg-cover bg-center bg-fixed",
@@ -84,7 +84,7 @@ export function Hero() {
           ].join(" ")}
         >
           {/* ───── Coluna ESQUERDA — texto ───── */}
-          <div className="w-full md:w-1/2 flex flex-col items-center text-center md:items-start md:text-left">
+          <div className="w-full md:w-1/2 flex flex-col items-center text-center md:items-start md:text-left relative z-10">
             {/* Badge */}
             <motion.span
               {...fadeUp(0.08)}
@@ -142,7 +142,7 @@ export function Hero() {
             <img
               src="/robo6.svg"
               alt="Robô CuidaLink"
-              className="relative z-[2] w-[95%] max-w-[420px] h-auto md:max-w-none md:absolute md:right-0 md:bottom-0 md:w-auto md:h-[100%] md:object-contain md:object-right-bottom pointer-events-none"
+              className="relative md:absolute z-[0] w-[95%] max-w-[420px] h-auto md:max-w-none md:-right-[20%] lg:-right-[10%] xl:right-0 md:bottom-0 md:w-auto md:h-[100%] md:object-contain md:object-right-bottom pointer-events-none opacity-80 md:opacity-100"
             />
           </div>
         </div>
