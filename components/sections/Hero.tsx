@@ -36,7 +36,7 @@ export function Hero() {
         "relative text-white",
         // Fundo premium escuro minimalista, com overlay (rgba(0,0,0,0.4))
         "bg-[linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('/blackgraud.png')]",
-        "bg-cover bg-center bg-fixed",
+        "bg-cover bg-center bg-fixed overflow-hidden",
       ].join(" ")}
     >
       {/* ══════════════════════════════════════════
@@ -142,7 +142,7 @@ export function Hero() {
             <img
               src="/robo6.svg"
               alt="Robô CuidaLink"
-              className="relative z-[2] h-auto w-[100%] sm:w-[110%] md:w-[850px] lg:w-[1050px] xl:w-[1200px] max-w-none md:-mr-[20%]"
+              className="relative z-[2] w-[80%] max-w-[320px] h-auto md:max-w-none md:absolute md:w-auto md:h-[650px] lg:h-[750px] xl:h-[850px] md:right-[-25%] lg:right-[-15%] xl:right-[-5%] md:top-1/2 md:-translate-y-1/2 object-contain pointer-events-none"
             />
           </div>
         </div>
