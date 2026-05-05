@@ -22,7 +22,7 @@ export function Hero() {
           NAVBAR
       ══════════════════════════════════════════ */}
       <nav className="sticky top-0 z-50 w-full" style={{ background: "#1c1c1c" }}>
-        <div className="mx-auto flex max-w-[1200px] items-center px-6 py-7 md:px-12 md:py-8">
+        <div className="mx-auto flex max-w-[1200px] items-center px-6 py-2 md:px-12 md:py-3">
 
           {/* Logo à esquerda */}
           <a
