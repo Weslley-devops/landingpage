@@ -60,17 +60,16 @@ export function LeadForm() {
   return (
     <section
       id="acesso"
-      className="relative overflow-hidden py-12 md:py-24 lg:py-28 bg-[#0d2818] bg-[url(/blackgraud.png)] bg-cover bg-center md:bg-fixed bg-no-repeat"
+      className="relative overflow-hidden py-12 md:py-24 lg:py-28 text-white"
+      style={{ background: "#000000" }}
     >
-      {/* Dark overlay */}
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none bg-black/40"
-      />
-
-      <div className="relative z-10 mx-auto px-4 md:px-8 max-w-[480px] md:max-w-[560px] w-full">
+      <div className="relative z-10 mx-auto px-4 md:px-8 max-w-[480px] md:max-w-[600px] lg:max-w-[760px] w-full">
         <FadeIn>
-          <div className="bg-white/5 border border-[rgba(0,229,192,0.25)] backdrop-blur-[12px] rounded-[20px] p-6 sm:p-8 md:p-12 lg:p-14 shadow-[0_0_30px_rgba(0,229,192,0.08),0_8px_32px_rgba(0,0,0,0.4)]">
+          <div className="relative overflow-hidden w-full px-6 py-8 sm:px-10 sm:py-10 md:px-14 md:py-12 lg:px-20 lg:py-16 bg-[#1a1a1a]/80 backdrop-blur-xl rounded-[24px] border border-[#333333] shadow-[inset_0_0_40px_rgba(0,229,255,0.05),0_10px_40px_rgba(0,0,0,0.5)] transition-all duration-300 hover:shadow-[inset_0_0_60px_rgba(0,229,255,0.1),0_15px_50px_rgba(0,0,0,0.6)]">
+            
+            {/* ── Luz Superior (Reflexo) ── */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[70%] h-[1px] bg-gradient-to-r from-transparent via-[#00e5ff]/50 to-transparent pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[20px] bg-[#00e5ff]/10 blur-[20px] pointer-events-none" />
             <h2 className="text-white text-[clamp(1.5rem,5vw,2.25rem)] font-extrabold leading-[1.2] tracking-[-0.02em]">
               Quero acesso antecipado
             </h2>

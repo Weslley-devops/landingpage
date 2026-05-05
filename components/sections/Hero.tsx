@@ -18,12 +18,12 @@ export function Hero() {
       className="relative text-white overflow-hidden"
       style={{ background: "#000000" }}
     >
+
       {/* ══════════════════════════════════════════
           NAVBAR
       ══════════════════════════════════════════ */}
       <nav className="sticky top-0 z-50 w-full" style={{ background: "#1c1c1c" }}>
-        <div className="mx-auto flex max-w-[1200px] items-center px-6 py-2 md:px-12 md:py-3">
-
+        <div className="mx-auto flex max-w-[1200px] items-center px-6 py-2 md:px-12 md:py-3 relative z-10">
           {/* Logo à esquerda */}
           <a
             href="/"
@@ -41,7 +41,7 @@ export function Hero() {
       {/* ══════════════════════════════════════════
           HERO — grid 1fr 1fr
       ══════════════════════════════════════════ */}
-      <div className="mx-auto max-w-[1200px]">
+      <div className="mx-auto max-w-[1200px] relative z-10">
         <div
           className="flex flex-col items-center text-center min-h-[520px] gap-0 px-5 pt-40 pb-[160px] md:px-12 md:pt-52 md:pb-[200px]"
         >
@@ -88,8 +88,6 @@ export function Hero() {
             </motion.div>
           </div>
         </div>
-
-
       </div>
     </section>
   );
