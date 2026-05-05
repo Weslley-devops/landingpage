@@ -27,9 +27,13 @@ export function Hero() {
           {/* Logo à esquerda */}
           <a
             href="/"
-            className="flex items-center no-underline cursor-pointer"
+            style={{ display: "flex", alignItems: "center", gap: "0px", textDecoration: "none", cursor: "pointer" }}
           >
-            <img src="/logo.svg" alt="CuidaLink" className="h-10 w-auto" />
+            <img src="/logo.svg" alt="CuidaLink" style={{ height: "120px", width: "120px", objectFit: "contain", display: "block" }} />
+            <span style={{ fontSize: "18px", fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1, marginLeft: "-8px" }}>
+              <span style={{ color: "#ffffff" }}>Cuida</span>
+              <span style={{ color: "#25D366" }}>Link</span>
+            </span>
           </a>
         </div>
       </nav>
