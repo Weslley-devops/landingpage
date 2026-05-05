@@ -21,10 +21,6 @@ export default function ThankYouPage() {
         <Navbar />
 
         <section className="relative mx-auto flex min-h-[90vh] max-w-2xl flex-col items-center justify-center px-6 text-center pt-32 pb-20">
-          <div className="relative mb-8">
-            <img src="/logo.svg" alt="CuidaLink" className="h-[180px] w-auto" />
-          </div>
-
           <h1 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
             Obrigado! <br />
             <span className="text-[#25D366]">Sua vaga está garantida.</span>
