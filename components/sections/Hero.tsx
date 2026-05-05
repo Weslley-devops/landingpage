@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ShieldCheck, Shield, Zap, Clock } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 
 /* ─── Variantes de animação ─── */
 const fadeUp = (delay = 0) => ({
@@ -11,23 +11,6 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const, delay },
 });
 
-/* ─── Checkmark inline para o logo ─── */
-function CheckIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={3}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden
-    >
-      <path d="M20 6 9 17l-5-5" />
-    </svg>
-  );
-}
 
 export function Hero() {
   return (
@@ -44,18 +27,9 @@ export function Hero() {
           {/* Logo à esquerda */}
           <a
             href="/"
-            className="flex items-center gap-2.5 no-underline cursor-pointer"
+            className="flex items-center no-underline cursor-pointer"
           >
-            <span
-              aria-hidden
-              className="grid h-9 w-9 place-items-center rounded-[9px] bg-[#25D366] text-white"
-            >
-              <CheckIcon className="h-5 w-5" />
-            </span>
-            <span className="text-[18px] font-semibold tracking-tight">
-              <span className="text-white">Cuida</span>
-              <span className="text-[#25D366]">Link</span>
-            </span>
+            <img src="/logo.svg" alt="CuidaLink" className="h-10 w-auto" />
           </a>
         </div>
       </nav>

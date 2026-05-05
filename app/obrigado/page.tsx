@@ -7,38 +7,18 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-/* ── Checkmark inline (mesmo do Hero) ── */
-function CheckIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={3}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden
-    >
-      <path d="M20 6 9 17l-5-5" />
-    </svg>
-  );
-}
-
 export default function ThankYouPage() {
   return (
     <main className="min-h-screen bg-black flex flex-col items-center justify-center px-6 py-16">
       <div className="w-full max-w-[600px] flex flex-col items-center text-center gap-6">
 
         {/* Logo */}
-        <a href="/" className="flex flex-col items-center gap-3 no-underline mb-2">
-          <span className="grid h-[100px] w-[100px] md:h-[120px] md:w-[120px] place-items-center rounded-[22px] md:rounded-[26px] bg-[#25D366] text-white">
-            <CheckIcon className="h-12 w-12 md:h-14 md:w-14" />
-          </span>
-          <span className="text-[22px] md:text-[26px] font-semibold tracking-tight">
-            <span className="text-white">Cuida</span>
-            <span className="text-[#25D366]">Link</span>
-          </span>
+        <a href="/" className="flex flex-col items-center no-underline mb-2">
+          <img
+            src="/logo.svg"
+            alt="CuidaLink"
+            className="h-[100px] w-auto md:h-[120px]"
+          />
         </a>
 
         {/* Título */}
